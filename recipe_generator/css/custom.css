@@ -24,21 +24,26 @@ html{
 }
 
 @font-face{
-  font-family:"apercu_regular";
+  font-family:"apercu-regular";
   font-weight: regular;
   src: url("../fonts/apercu_regular.otf") format("opentype");
 }
 
 @font-face{
-  font-family:"apercu_bold";
+  font-family:"apercu-bold";
   font-weight: bold;
   src: url("../fonts/apercu_bold.otf") format("opentype");
 }
 
 @font-face{
-  font-family:"apercu_regular_italic";
+  font-family:"apercu-regular-italic";
   font-weight: bold;
   src: url("../fonts/apercu_regular_italic.otf") format("opentype");
+}
+
+@font-face{
+  font-family:"apercu-mono";
+  src: url("../fonts/apercu_mono.otf") format("opentype");
 }
 
 .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
@@ -111,6 +116,7 @@ h6 {font-size:0.75em}
 	margin:40px auto;
 	position:relative;
 
+	font-family: 'apercu-regular', Arial, sans-serif;
 	font-size: 15pt;
 	line-height: 25pt;
 }
@@ -133,6 +139,7 @@ h6 {font-size:0.75em}
 
 
 #timer, #countdown{
+	font-family: 'apercu-bold', Arial, sans-serif;
 	font-weight:bold;
 	font-size: 15px;
 	margin-left: auto;
@@ -157,7 +164,7 @@ h6 {font-size:0.75em}
 	float:left;
 	padding:0px;
 	margin:0px;
-	font-family: 'Apercu-mono';
+	font-family: 'apercu-mono', Arial, sans-serif;
 	font-size:45pt;	
 	width:83.33%;
 }
@@ -206,14 +213,15 @@ li{
 	}
 
 	#recipe{
+		font-family: 'apercu-regular', Arial, sans-serif;
 		font-size:12pt;
 		line-height:15pt;
 	}
 
 	li{
-	line-height:15pt;
-	margin-bottom: 0px;
-}
+		line-height:15pt;
+		margin-bottom: 0px;
+	}
 
 	#thankyou{
 		display:block;
