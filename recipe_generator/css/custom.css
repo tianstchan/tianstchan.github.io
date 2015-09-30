@@ -84,6 +84,10 @@ h6 {font-size:0.75em}
 	background-color:black;
 	border: 1px solid black;
 	z-index: 2;
+
+	font-family: 'apercu-regular', Arial, sans-serif;
+	font-size: 15pt;
+	line-height: 25pt;
 }
 
 #about:hover{
