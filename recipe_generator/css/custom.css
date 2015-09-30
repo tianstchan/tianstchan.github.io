@@ -99,7 +99,7 @@ h6 {font-size:0.75em}
 	padding-left:10px;
 	padding-right:10px;
 
-	font-family: 'apercu-regular', Arial, sans-serif;
+	font-family: 'apercu-bold', Arial, sans-serif;
 	font-size: 12pt;
 }
 
@@ -160,6 +160,7 @@ h6 {font-size:0.75em}
 
 #countdown{
 	text-decoration: underline;
+	padding-left: 
 }
 
 
