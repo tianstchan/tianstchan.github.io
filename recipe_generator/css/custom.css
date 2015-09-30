@@ -84,10 +84,6 @@ h6 {font-size:0.75em}
 	background-color:black;
 	border: 1px solid black;
 	z-index: 2;
-
-	font-family: 'apercu-regular', Arial, sans-serif;
-	font-size: 15pt;
-	line-height: 25pt;
 }
 
 #about:hover{
@@ -102,6 +98,10 @@ h6 {font-size:0.75em}
 	color:white;
 	padding-left:10px;
 	padding-right:10px;
+
+	font-family: 'apercu-regular', Arial, sans-serif;
+	font-size: 15pt;
+	line-height: 25pt;
 }
 
 .popup-modal:hover{
