@@ -1,0 +1,324 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, small{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  background: transparent; 
+}
+
+html, body{
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+html{
+	margin: 0 auto;
+	height: auto; 
+	border-top: 15px solid black;
+}
+
+@font-face{
+  font-family:"apercu_regular";
+  font-weight: regular;
+  src: url("../fonts/apercu_regular.otf") format("opentype");
+}
+
+@font-face{
+  font-family:"apercu_bold";
+  font-weight: bold;
+  src: url("../fonts/apercu_bold.otf") format("opentype");
+}
+
+@font-face{
+  font-family:"apercu_regular_italic";
+  font-weight: bold;
+  src: url("../fonts/apercu_regular_italic.otf") format("opentype");
+}
+
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+  padding-left:0;
+  padding-right:0;
+}
+
+body {
+  /*width: 1176px;*/
+  margin: 0 auto; 
+  /*padding:50px;*/
+  padding-top:75px;
+  padding-bottom:75px;
+  font-family: 'Apercu';  
+}
+
+h1 {font-size:5em}
+h2 {font-size:1.5em; line-height:1.4em}
+h3 {font-size:1.17em}
+h4 {font-size:1em}
+h5 {font-size:0.83em}
+h6 {font-size:0.75em}
+
+
+
+.container{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.right-col{
+	position:relative;	
+}
+
+#about{
+	position: fixed;
+	display: inline-block;
+	background-color:black;
+	border: 1px solid black;
+	z-index: 2;
+}
+
+#about:hover{
+	background-color:white;
+	border: 1px solid black;
+}
+
+.popup-modal{
+	text-decoration: none;
+	font-weight: bold;
+	margin: auto 0;
+	color:white;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.popup-modal:hover{
+	color:black;
+}
+
+.popup-modal:focus{
+	outline:none;
+}
+
+#test-modal{
+	background-color: white;
+	padding: 30px 40px;
+	text-align:left;
+	max-width: 650px;
+	margin:40px auto;
+	position:relative;
+
+	font-size: 15pt;
+	line-height: 25pt;
+}
+
+#test-modal p{
+	margin-bottom: 10px
+}
+
+.popup-modal-dismiss{
+	text-align: right;
+	font-size: 10pt;
+	text-decoration: none;
+	border:1px solid;
+	padding:5px;
+}
+
+.popup-modal-dismiss:hover{
+	text-decoration:underline;
+}
+
+
+#timer, #countdown{
+	font-weight:bold;
+	font-size: 15px;
+	margin-left: auto;
+  	margin-right: auto;
+	color:#C0C0C0;
+
+	z-index:1;
+	position: fixed;
+}
+
+#timer{
+	padding-top: 30px;
+	text-align: right;
+}
+
+#countdown{
+	text-decoration: underline;
+}
+
+
+#steps{
+	float:left;
+	padding:0px;
+	margin:0px;
+	font-family: 'Apercu-mono';
+	font-size:45pt;	
+	width:83.33%;
+}
+
+#steps span{
+	background-color: #DCDCDC;
+}
+
+#text{
+	width:60%;
+	margin-bottom: 50px;
+	cursor:pointer; cursor: hand;
+}
+
+#text:hover span{
+	background-color: yellow;
+}
+
+#steps span:hover{
+	background-color: yellow;
+	cursor: hand;
+}
+
+/*#text:hover + #steps span:hover{
+	background-color: yellow;
+}*/
+
+li{
+	line-height:55pt;
+	margin-bottom: 50px;
+	overflow-y:auto;
+}
+
+#thankyou{
+	display:none;
+}
+
+
+
+@media print {
+
+	.content{
+		width: 100%; 
+		margin: 0; 
+		float: none;
+	}
+
+	#recipe{
+		font-size:12pt;
+		line-height:15pt;
+	}
+
+	li{
+	line-height:15pt;
+	margin-bottom: 0px;
+}
+
+	#thankyou{
+		display:block;
+		font-size: 8pt;
+	}
+
+	#about, #timer, #countdown, #text{
+		display:none; 
+	}
+}
+
+
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+/*	body{
+		background-color: yellow;
+	}*/
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+/*	body{
+		background-color: green;
+	}*/
+
+	#test-modal{
+		padding-top: 30px;
+		padding-right: 40px;
+		padding-left:40px;
+		max-width: 500px;
+
+		font-size: 13pt;
+		line-height: 23pt;
+	}
+
+	.main{
+		padding-left: 50px;
+	}
+
+	#steps{
+		font-size:35pt;	
+	}
+}
+
+@media (max-width: 600px) {
+/*	body{
+		background-color: red;
+	}*/
+
+	#test-modal{
+		padding-top: 30px;
+		padding-right: 40px;
+		padding-left:40px;
+		max-width: 400px;
+
+		font-size: 12pt;
+		line-height: 20pt;
+	}
+
+	.popup-modal-dismiss{
+		font-size: 9pt;
+	}
+
+	.popup-modal{
+		font-size: 12px; 
+	}
+
+	#timer, #countdown{
+		font-size: 14px; 
+	}
+
+	#text{
+		width:80%;
+	}
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+	/*body{
+		background-color: gray;
+	}   */
+
+	#test-modal{
+		padding-top: 30px;
+		padding-right: 40px;
+		padding-left:40px;
+		max-width: 300;
+
+		font-size: 12pt;
+		line-height: 18pt;
+	}
+
+	.popup-modal-dismiss{
+		font-size: 9pt;
+	}    
+
+	.main{
+		padding-left: 25px;
+	}
+
+}
+
+
+
+

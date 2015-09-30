@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" > 
+    <title>Recipe Generator</title>
+    <meta name="description" content=""> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Recipe, Food, Generator, Random" />
+    <meta name="description" content="Recipe Generator"/>
+
+    <!--///////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    //      Styles
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////--> 
+    
+    <!--   FAVICON -->
+        <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        
+    <!-- TWITTER BOOTSTRAP -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css" media="screen"/>
+
+        <!-- Magnific Popup core CSS file -->
+        <link rel="stylesheet" href="js/magnific-popup.css"> 
+
+    <!-- CUSTOM CSS -->
+        <link rel="stylesheet" href="css/custom.css" type="text/css"/>
+        
+    <!--///////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    //      Scripts
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////--> 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <!-- Magnific Popup core JS file -->
+        <script src="js/jquery.magnific-popup.js"></script> 
+
+    </head>
+
+    <body>
+        <div class="content container">
+            
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 left-col">
+               <div id="thankyou">
+                    This is an exploration of the deconstruction of a receipe. Based on the ingredients selected, the user forms their own receipe.
+                </div>
+
+            </div>
+
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 main">     
+                <!-- COntent -->
+ 
+
+
+                <div id="content">            
+                </div>
+
+                <div id="steps"> 
+                    <div id="recipe"></div>
+                    <div id="text"></div>
+                </div>
+
+            </div>
+            
+             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 right-col">
+                <div id="about">
+                    <a class="popup-modal" href="#test-modal">ABOUT</a>
+
+                    <div id="test-modal" class="mfp-hide white-popup-block">
+                        <p>Before time runs out, select your desired ingredients to form your own recipe.</p>
+                        <p>This is an exploration of the deconstruction of a receipe. Based on the ingredients selected, the user forms their own receipe.</p><br>
+                        <p><a class="popup-modal-dismiss" href="#">Close</a></p>
+                    </div>
+                </div>
+
+                <!-- Timer -->
+
+               <div id="timer">TIMER:<span id='countdown'>30</span></div>
+
+
+            </div>
+
+        </div>
+        
+    <script>
+
+    // define boolean variable
+    var popupOpen = true;
+
+    //Popup// 
+    $(function () {
+        $('.popup-modal').magnificPopup({
+          type: 'inline',
+          preloader: false,
+          focus: '#username',
+          modal: true,
+          callbacks: {
+                open: function() {
+                    // Will fire when this exact popup is opened
+                    // this - is Magnific Popup object
+                    popupOpen = true;
+                },
+            }
+        }).magnificPopup('open');
+        
+        $(document).on('click', '.popup-modal-dismiss', function (e) {
+            popupOpen = false;
+          e.preventDefault();
+          $.magnificPopup.close();
+        });
+    });
+
+
+    //Timer//
+    $(function() {
+        var cd = $('#countdown');
+        var c = parseInt(cd.text(),10);
+        var interv = setInterval(function() {
+            if(!popupOpen){
+                c--;
+                cd.html(c);
+                if (c == 0) {
+                    window.print();
+                    // if  $('#cancelButton').click(function(){
+                    //         window.close();
+                    //     })
+                }            
+            }
+           if (c == 0) {
+                window.location.reload(false);
+                clearInterval(interv);
+            }
+
+        }, 1000);
+    });
+
+
+    //Add Content//
+    var words = [
+        '<span id="pasta">Penne</span>', 
+        '<span id="meat">Italian Sausage</span>',
+        '<span id="oil">Olive Oil</span>', 
+        '<span id="onion">Onion</span>',
+        '<span id="garlic">Garlic</span>',
+        '<span id="potatoes">Sweet Potatoes</span>',
+        '<span id="tomato">Tomatoes</span>',
+        '<span id="salt">Cheese</span>',
+        '<span id="pork">Pork</span>',
+    ];
+
+    var index = 0;
+
+    $(function rotate() {
+      document.getElementById('text').innerHTML =words[(index++)%(words.length)];
+      if($("#text").is(":hover")){
+        setTimeout(rotate, 600);
+      }
+      else{
+        setTimeout(rotate, 100);
+      }
+    })
+
+    $(function(){
+        $(document).on('click','#pasta', function () {
+            $("<li>Cook 8 ounces of pasta, according to its package directions. Add pasta to pan.</li>").appendTo('#recipe');
+           
+            var href = $('#text');
+            $('html, body').stop().animate({scrollTop: $(href).offset().top - 59}, 500);     
+        }); 
+
+
+        $(document).on('click','#meat', function () {
+            $("<li>Remove casings from 8 ounces of sausage.</li>").appendTo('#recipe');
+
+            var href = $('#text');
+            $('html, body').stop().animate({scrollTop: $(href).offset().top - 59}, 500);
+        });
+
+        $(document).on('click','#oil', function () {
+            $("<li>Add 2 teaspoons oil to pan; swirl to coat.</li>").appendTo('#recipe');
+
+            var href = $('#text');
+            $('html, body').stop().animate({scrollTop: $(href).offset().top - 59}, 500);
+        });
+
+        $(document).on('click','#onion', function () {
+            $("<li>Add sausage and onion to pan; cook 4 minutes, stirring to crumble sausage.</li>").appendTo('#recipe');
+
+            var href = $('#text');
+            $('html, body').stop().animate({scrollTop: $(href).offset().top - 59}, 500);
+        });
+
+        $(document).on('click','#garlic', function () {
+            $("<li>Add 2 teaspoons minced garlic.</li>").appendTo('#recipe');
+
+            var href = $('#text');
+            $('html, body').stop().animate({scrollTop: $(href).offset().top - 59}, 500);
+        });
+
+        $(document).on('click','#tomato', function () {
+            $("<li>Stir in 1&frac14; pounds chopped tomatoes.</li>").appendTo('#recipe');
+
+            var href = $('#text');
+            $('html, body').stop().animate({scrollTop: $(href).offset().top - 59}, 500);
+        });
+
+        $(document).on('click','#salt', function () {
+            $("<li>Stir in 2 tablespoons cheese, salt and pepper to pan.</li>").appendTo('#recipe');
+
+            var href = $('#text');
+            $('html, body').stop().animate({scrollTop: $(href).offset().top - 59}, 500);
+        });
+
+        $(document).on('click','#pork', function () {
+            $("<li>Flatten sliced 1 pound of pork tenderloin to &#189; inch thickness using your fingertips. Add pork to pan.</li>").appendTo('#recipe');
+
+            var href = $('#text');
+            $('html, body').stop().animate({scrollTop: $(href).offset().top - 59}, 500);
+        });
+
+        $(document).on('click','#potatoes', function () {
+            $("<li>Slice the sweet potatoes approximately &frac34; inch thick, and toss with other ingredients.</li>").appendTo('#recipe');
+
+            var href = $('#text');
+            $('html, body').stop().animate({scrollTop: $(href).offset().top - 59}, 500);
+        });
+    }); 
+
+    
+    
+ </script>
+            
+        
+    </body>
+</html>
